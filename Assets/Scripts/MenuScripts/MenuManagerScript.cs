@@ -73,7 +73,7 @@ public class MenuManagerScript : MonoBehaviour
 
     public void AddHealth() // Particle system handles this now
     {
-        PersistentManagerScript.Instance.PlayerHealth = 100;
+        PersistentManagerScript.Instance.PlayerHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
 
     }
 

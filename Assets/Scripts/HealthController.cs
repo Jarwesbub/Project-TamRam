@@ -13,21 +13,33 @@ public class HealthController : MonoBehaviour
 
     public HealthBarScript healthBar;
 
-    
+    public bool GameStart;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = PersistentManagerScript.Instance.PlayerHealth;
-        currentHealth = maxHealth;
+        maxHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
+        currentHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
         healthBar.SetMaxHealth(maxHealth);
     }
+
 
     void Update()
     {
         currentHealth = PersistentManagerScript.Instance.PlayerHealth;
         healthBar.SetHealth(currentHealth);
 
+
+        if (GameStart == true)
+        {
+            currentHealth = PersistentManagerScript.Instance.Con * 10;
+
+            GameStart = false;
+        }
+
+
+
+        
         if (currentHealth <= 0)
         {
             //PersistentManagerScript.Instance.GameReset = true;
@@ -35,44 +47,20 @@ public class HealthController : MonoBehaviour
             SceneManager.LoadScene("GameoverScene");
 
         }
+        
 
+    }
+    
+    
+}
 
-        /*
-        // Turhia juttuja alhaallas
-        if (Input.GetKeyDown(KeyCode.Keypad9))
+/*
+        if (PersistentManagerScript.Instance.PlayerClass == 1 || PersistentManagerScript.Instance.PlayerClass == 2 || PersistentManagerScript.Instance.PlayerClass == 3)
         {
-
-            TakeDamage(20);
+            if (PersistentManagerScript.Instance.PlayerHealth +1 >= PersistentManagerScript.Instance.PlayerMaxHealth)
+            {
+                PersistentManagerScript.Instance.PlayerHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
+            }
         }
-
-        if (Input.GetKeyDown(KeyCode.Keypad8))
-            GetHP(20);
-            */
-    }
-
-    /*
-
-    public void GetHP()
-    {
-        GetHP(20);
-    }
-
-    void GetHP(int HP)
-    {
-        currentHealth += HP;
-        healthBar.SetHealth(currentHealth);
-    }
-
-    public void TakeDamage()
-    {
-        TakeDamage(20);
-    }
-
-    void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
     }
     */
-
-}

@@ -625,12 +625,13 @@ public class EnemyClass2AttDef : MonoBehaviour
             if (PlayerClass == 1) // Super Attack from Class1 -> makes 15 dmg/ stuns opponent///Cost-15 MP
             {
                 CriticalHitClac();
-                ClassBuffNerf();
+                
 
                 StunEffect += 1;///Check made in EnemyBasicAttack if true
                 NoStatusEffect = STR;
                 STR = 15; // ATTACK
                 PersistentManagerScript.Instance.PlayerMana -= 15;
+                ClassBuffNerf();
 
                 if (STRBuff >= EnCon)
                 {

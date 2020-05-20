@@ -642,7 +642,7 @@ public class EnemyClass1AttDef : MonoBehaviour
                 ClassBuffNerf();
                 StunEffect += 1;///Check made in EnemyBasicAttack if true
                 NoConfusionEffect = STR;
-                STR = 15; // ATTACK   
+                STR = 15; // ATTACK
                 PersistentManagerScript.Instance.PlayerMana -= 15;
 
                 if (STR >= EnCon)

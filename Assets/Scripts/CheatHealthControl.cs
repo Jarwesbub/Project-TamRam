@@ -11,7 +11,7 @@ public class CheatHealthControl : MonoBehaviour
     {
         if (Input.GetKeyDown("h"))
         {
-            PersistentManagerScript.Instance.PlayerHealth += 20;
+            PersistentManagerScript.Instance.PlayerHealth = 20;
 
         }
         if (Input.GetKeyDown("m"))

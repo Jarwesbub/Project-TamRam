@@ -17,6 +17,8 @@ public class XPControl : MonoBehaviour
     public bool XPStart = false;
     public int PlayerLvlCheck;
 
+    public int XPNextLVL;
+
     void Start()
     {
         XPStart = PersistentManagerScript.Instance.XPStart;
@@ -37,7 +39,7 @@ public class XPControl : MonoBehaviour
         XPpointsTxt.text = "+ " + XPpointsTxt.text + " XP";
 
         XPpointsAllTxt.text = XPpoints.ToString();
-        XPpointsAllTxt.text = "  " + XPpointsAllTxt.text + " XP";
+        XPpointsAllTxt.text = "[ " + XPpointsAllTxt.text + (" / ") + XPNextLVL.ToString() + " XP ]";
 
     }
 
@@ -122,12 +124,54 @@ public class XPControl : MonoBehaviour
 
     }
 
-
+    void NextLevelValue()
+    {
+       if (XPpoints >= 0 && XPpoints <= 201)
+        {
+            XPNextLVL = 200;
+        }
+        if (XPpoints >= 201 && XPpoints <= 401)
+        {
+            XPNextLVL = 400;
+        }
+        if (XPpoints >= 401 && XPpoints <= 801)
+        {
+            XPNextLVL = 800;
+        }
+        if (XPpoints >= 801 && XPpoints <= 1601)
+        {
+            XPNextLVL = 1600;
+        }
+        if (XPpoints >= 1601 && XPpoints <= 3201)
+        {
+            XPNextLVL = 3200;
+        }
+        if (XPpoints >= 3201 && XPpoints <= 6401)
+        {
+            XPNextLVL = 6400;
+        }
+        if (XPpoints >= 6401 && XPpoints <= 12801)
+        {
+            XPNextLVL = 12800;
+        }
+        if (XPpoints >= 12801 && XPpoints <= 25601)
+        {
+            XPNextLVL = 25600;
+        }
+        if (XPpoints >= 25601 && XPpoints <= 51201)
+        {
+            XPNextLVL = 51200;
+        }
+    }
 
     public void Update()
     {
         //XPpoints = PersistentManagerScript.Instance.XPpoints;
-        
+        PersistentManagerScript.Instance.XPNextLVL = XPNextLVL;
+
+        NextLevelValue();
+
+
         if (PersistentManagerScript.Instance.XPScreen == 0)
         {
             PersistentManagerScript.Instance.XPStart = true;

@@ -13,6 +13,7 @@ public class EnemyLevelManager : MonoBehaviour
     public int EnDex;
     public int EnInt;
     public int EnAgi;
+    int EnWis;
 
     public int PlayerLVL;
     public bool EnNewLVL = false;
@@ -264,91 +265,101 @@ public class EnemyLevelManager : MonoBehaviour
         if (EnLVL == 1)
         {
             EnStr = 13;
+            EnDex = 7;
+            EnInt = 3;
+            EnAgi = 6;
             EnCon = 3;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnWis = 2;
         }
 
         if (EnLVL == 2)
         {
             EnStr = 13;
-            EnCon = 2;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnDex = 8;
+            EnInt = 4;
+            EnAgi = 7;
+            EnCon = 4;
+            EnWis = 3;
         }
 
         if (EnLVL == 3)
         {
-            EnStr = 14;
-            EnCon = 3;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 13;
+            EnDex = 9;
+            EnInt = 5;
             EnAgi = 8;
+            EnCon = 5;
+            EnWis = 4;
         }
 
         if (EnLVL == 4)
         {
-            EnStr = 16;
-            EnCon = 4;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 14;
+            EnDex = 10;
+            EnInt = 6;
             EnAgi = 9;
+            EnCon = 6;
+            EnWis = 5;
         }
 
         if (EnLVL == 5)
         {
-            EnStr = 17;
-            EnCon = 5;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 15;
+            EnDex = 11;
+            EnInt = 7;
             EnAgi = 10;
+            EnCon = 7;
+            EnWis = 6;
         }
 
         if (EnLVL == 6)
         {
-            EnStr = 18;
-            EnCon = 6;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 10;
+            EnStr = 16;
+            EnDex = 12;
+            EnInt = 8;
+            EnAgi = 11;
+            EnCon = 8;
+            EnWis = 7;
         }
 
         if (EnLVL == 7)
         {
-            EnStr = 20;
-            EnCon = 7;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 17;
+            EnDex = 13;
+            EnInt = 9;
             EnAgi = 12;
+            EnCon = 9;
+            EnWis = 8;
         }
 
         if (EnLVL == 8)
         {
-            EnStr = 22;
-            EnCon = 11;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 14;
+            EnStr = 18;
+            EnDex = 14;
+            EnInt = 10;
+            EnAgi = 13;
+            EnCon = 10;
+            EnWis = 9;
         }
 
         if (EnLVL == 9)
         {
-            EnStr = 24;
-            EnCon = 13;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 16;
+            EnStr = 19;
+            EnDex = 15;
+            EnInt = 11;
+            EnAgi = 14;
+            EnCon = 11;
+            EnWis = 10;
         }
 
         if (EnLVL == 10)
         {
-            EnStr = 26;
-            EnCon = 15;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 19;
+            EnStr = 20;
+            EnDex = 16;
+            EnInt = 12;
+            EnAgi = 15;
+            EnCon = 12;
+            EnWis = 11;
         }
         DrawEnStarts();
     }
@@ -359,93 +370,104 @@ public class EnemyLevelManager : MonoBehaviour
 
         if (EnLVL == 1)
         {
-            EnStr = 0;
-            EnCon = 3;
+            EnStr = 3;
             EnDex = 13;
-            EnInt = 0;
-            EnAgi = 11;
+            EnInt = 7;
+            EnAgi = 8;
+            EnCon = 3;
+            EnWis = 2;
         }
 
         if (EnLVL == 2)
         {
-            EnStr = 13;
-            EnCon = 2;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnStr = 4;
+            EnDex = 13;
+            EnInt = 8;
+            EnAgi = 9;
+            EnCon = 4;
+            EnWis = 3;
         }
 
         if (EnLVL == 3)
         {
-            EnStr = 14;
-            EnCon = 3;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnStr = 5;
+            EnDex = 13;
+            EnInt = 9;
+            EnAgi = 10;
+            EnCon = 5;
+            EnWis = 4;
         }
 
         if (EnLVL == 4)
         {
-            EnStr = 16;
-            EnCon = 4;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 9;
+            EnStr = 6;
+            EnDex = 14;
+            EnInt = 10;
+            EnAgi = 11;
+            EnCon = 6;
+            EnWis = 5;
         }
 
         if (EnLVL == 5)
         {
-            EnStr = 17;
-            EnCon = 5;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 10;
+            EnStr = 7;
+            EnDex = 15;
+            EnInt = 11;
+            EnAgi = 12;
+            EnCon = 7;
+            EnWis = 6;
         }
 
         if (EnLVL == 6)
         {
-            EnStr = 18;
-            EnCon = 6;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 10;
+            EnStr = 8;
+            EnDex = 16;
+            EnInt = 12;
+            EnAgi = 13;
+            EnCon = 8;
+            EnWis = 7;
         }
 
         if (EnLVL == 7)
         {
-            EnStr = 20;
-            EnCon = 7;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 12;
+            EnStr = 9;
+            EnDex = 17;
+            EnInt = 13;
+            EnAgi = 14;
+            EnCon = 9;
+            EnWis = 8;
         }
 
         if (EnLVL == 8)
         {
-            EnStr = 22;
-            EnCon = 11;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 14;
+            EnStr = 10;
+            EnDex = 18;
+            EnInt = 14;
+            EnAgi = 15;
+            EnCon = 10;
+            EnWis = 9;
         }
 
         if (EnLVL == 9)
         {
-            EnStr = 24;
-            EnCon = 13;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 11;
+            EnDex = 19;
+            EnInt = 15;
             EnAgi = 16;
+            EnCon = 11;
+            EnWis = 10;
         }
 
         if (EnLVL == 10)
         {
-            EnStr = 26;
-            EnCon = 15;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 19;
+            EnStr = 12;
+            EnDex = 20;
+            EnInt = 16;
+            EnAgi = 17;
+            EnCon = 12;
+            EnWis = 11;
         }
+
         DrawEnStarts();
     }
 
@@ -455,93 +477,104 @@ public class EnemyLevelManager : MonoBehaviour
 
         if (EnLVL == 1)
         {
-            EnStr = 0;
-            EnCon = 3;
-            EnDex = 0;
+            EnStr = 7;
+            EnDex = 3;
             EnInt = 13;
-            EnAgi = 8;
+            EnAgi = 5;
+            EnCon = 3;
+            EnWis = 2;
         }
 
         if (EnLVL == 2)
         {
-            EnStr = 13;
-            EnCon = 2;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnStr = 8;
+            EnDex = 4;
+            EnInt = 13;
+            EnAgi = 6;
+            EnCon = 4;
+            EnWis = 3;
         }
 
         if (EnLVL == 3)
         {
-            EnStr = 14;
-            EnCon = 3;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 8;
+            EnStr = 9;
+            EnDex = 5;
+            EnInt = 13;
+            EnAgi = 7;
+            EnCon = 5;
+            EnWis = 4;
         }
 
         if (EnLVL == 4)
         {
-            EnStr = 16;
-            EnCon = 4;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 9;
+            EnStr = 10;
+            EnDex = 6;
+            EnInt = 14;
+            EnAgi = 8;
+            EnCon = 6;
+            EnWis = 5;
         }
 
         if (EnLVL == 5)
         {
-            EnStr = 17;
-            EnCon = 5;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 10;
+            EnStr = 11;
+            EnDex = 7;
+            EnInt = 15;
+            EnAgi = 9;
+            EnCon = 7;
+            EnWis = 6;
         }
 
         if (EnLVL == 6)
         {
-            EnStr = 18;
-            EnCon = 6;
-            EnDex = 0;
-            EnInt = 0;
+            EnStr = 12;
+            EnDex = 8;
+            EnInt = 16;
             EnAgi = 10;
+            EnCon = 8;
+            EnWis = 7;
         }
 
         if (EnLVL == 7)
         {
-            EnStr = 20;
-            EnCon = 7;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 12;
+            EnStr = 13;
+            EnDex = 9;
+            EnInt = 17;
+            EnAgi = 11;
+            EnCon = 9;
+            EnWis = 8;
         }
 
         if (EnLVL == 8)
         {
-            EnStr = 22;
-            EnCon = 11;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 14;
+            EnStr = 14;
+            EnDex = 10;
+            EnInt = 18;
+            EnAgi = 12;
+            EnCon = 10;
+            EnWis = 9;
         }
 
         if (EnLVL == 9)
         {
-            EnStr = 24;
-            EnCon = 13;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 16;
+            EnStr = 15;
+            EnDex = 11;
+            EnInt = 19;
+            EnAgi = 13;
+            EnCon = 11;
+            EnWis = 10;
         }
 
         if (EnLVL == 10)
         {
-            EnStr = 26;
-            EnCon = 15;
-            EnDex = 0;
-            EnInt = 0;
-            EnAgi = 19;
+            EnStr = 16;
+            EnDex = 12;
+            EnInt = 20;
+            EnAgi = 14;
+            EnCon = 12;
+            EnWis = 11;
         }
+
         DrawEnStarts();
     }
 

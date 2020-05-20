@@ -58,7 +58,7 @@ public class StatsManager : MonoBehaviour
         }
 
         XPpointsTxt.text = PersistentManagerScript.Instance.XPpoints.ToString();
-        //XPpointsTxt.text = "Exp      " + XPpointsTxt.text;
+        XPpointsTxt.text = XPpointsTxt.text + (" / ") + PersistentManagerScript.Instance.XPNextLVL.ToString();
 
         HpTxt.text = PersistentManagerScript.Instance.PlayerHealth.ToString();
         HpTxt.text = "HP     " + HpTxt.text;

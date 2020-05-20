@@ -7,9 +7,10 @@ public class PersistentManagerScript : MonoBehaviour
     // Variables for StatsManager script (This creates variables and keeps all values always reliable)
     public bool GameReset = false;
 
-    public int PlayerHealth = 100; // WIP
-    public int PlayerMana;
-    public int maxMana = 30;
+    public int PlayerHealth = 300; // WIP
+    public int PlayerMaxHealth = 50;
+    public int PlayerMana = 100;
+    public int maxMana = 100;
     public bool Run = false;
 
 
@@ -39,6 +40,7 @@ public class PersistentManagerScript : MonoBehaviour
     public int XPScreen = 0; // 0 = No screen, 1 = Fight screen,
     public int XPpoints;
     public bool XPStart;
+    public int XPNextLVL;
     public int EnDies = 0;
     public int EnLvl;
 
@@ -58,7 +60,8 @@ public class PersistentManagerScript : MonoBehaviour
 
     public int WorldMapPos; // 1 = Home, 2 = Grass, 3 = Oasis, 4 = Tundra, 5 = Volcanic
     public bool MapChange = false;
-    
+
+
 
     private void Awake()
     {
@@ -90,7 +93,18 @@ public class PersistentManagerScript : MonoBehaviour
     public void Update()
     {
 
-        CritHit = Luck / 4;
+        PlayerMaxHealth = Con * 10;
+
+        if (PlayerMaxHealth >= 60)
+        if (PlayerHealth+1 > PlayerMaxHealth)
+        {
+            PlayerHealth = Con * 10;
+
+
+        }
+
+
+    CritHit = Luck / 4;
 
         if (StartRandomCrit == true) // If true -> Start randomizing number from 0 - 100
         {
