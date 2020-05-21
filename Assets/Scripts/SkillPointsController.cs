@@ -8,7 +8,7 @@ public class SkillPointsController : MonoBehaviour
 {
     public int SkillPoints;
     public Text SkillPointsTxt;
-
+    bool LevelMax = false;
 
     public void Start()
     {
@@ -17,124 +17,129 @@ public class SkillPointsController : MonoBehaviour
 
     public void Update()
     {
-        
+        PersistentManagerScript.Instance.SkillPoints = SkillPoints;
 
-        if (PersistentManagerScript.Instance.Lvl == 1)
+        if (LevelMax == false)
         {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-            SkillPoints = 0;
-
-
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 2)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 1)
             {
-                SkillPoints += 2;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+                SkillPoints = 0;
+
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 3)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 2)
             {
-                SkillPoints += 2;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 2;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 4)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 3)
             {
-                SkillPoints += 3;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 2;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 5)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 4)
             {
-                SkillPoints += 3;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 3;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 6)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 5)
             {
-                SkillPoints += 4;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 3;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 7)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 6)
             {
-                SkillPoints += 4;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 4;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 8)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 7)
             {
-                SkillPoints += 4;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 4;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 9)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 8)
             {
-                SkillPoints += 5;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 4;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
-
-        if (PersistentManagerScript.Instance.Lvl == 10)
-        {
-            SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
-
-            if (PersistentManagerScript.Instance.LvlGet == true)
+            if (PersistentManagerScript.Instance.Lvl == 9)
             {
-                SkillPoints += 5;
-                PersistentManagerScript.Instance.LvlGet = false;
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
+
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 5;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                }
+
             }
 
-        }
+            if (PersistentManagerScript.Instance.Lvl == 10)
+            {
+                SkillPointsTxt.text = ("Skill Points: ") + SkillPoints.ToString();
 
+                if (PersistentManagerScript.Instance.LvlGet == true)
+                {
+                    SkillPoints += 5;
+                    PersistentManagerScript.Instance.LvlGet = false;
+                    LevelMax = true;
+                }
+
+            }
+
+
+        }
     }
 
 

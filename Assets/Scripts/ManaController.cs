@@ -10,7 +10,7 @@ public class ManaController : MonoBehaviour
     public int maxMana;
     public int currentMana;
 
-    public HealthBarScript healthBar;
+    //public HealthBarScript healthBar;
 
 
 
@@ -19,22 +19,24 @@ public class ManaController : MonoBehaviour
     {
         //maxMana = PersistentManagerScript.Instance.PlayerMana;
 
-        PersistentManagerScript.Instance.PlayerMana = PersistentManagerScript.Instance.maxMana;
+        PersistentManagerScript.Instance.maxMana = 80;
 
+        PersistentManagerScript.Instance.PlayerMana = PersistentManagerScript.Instance.maxMana;
+        /*
         maxMana = PersistentManagerScript.Instance.maxMana;
 
         currentMana = maxMana;
         healthBar.SetMaxHealth(maxMana);
-
+        */
     }
-
+    /*
     void Update()
     {
         maxMana = PersistentManagerScript.Instance.maxMana;
-
+        
         currentMana = PersistentManagerScript.Instance.PlayerMana;
         healthBar.SetHealth(currentMana);
-
+        
         if (currentMana <= 0)
         {
             Debug.Log("Mana empty");
@@ -43,7 +45,7 @@ public class ManaController : MonoBehaviour
 
 
     }
-
+    */
 
 
 

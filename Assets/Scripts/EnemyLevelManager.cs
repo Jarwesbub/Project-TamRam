@@ -107,88 +107,106 @@ public class EnemyLevelManager : MonoBehaviour
 
     void RandomizeEnLVL(int level)
     {
-        if (level == 1 && EnNewLVL == true)
+        if (PersistentManagerScript.Instance.WorldMapPos != 5)
         {
 
-            EnLVL = 1;
+            if (level == 1 && EnNewLVL == true)
+            {
 
-            EnNewLVL = false;
-        }
+                EnLVL = 1;
+
+                EnNewLVL = false;
+            }
 
 
-        if (level == 2 && EnNewLVL == true)
-        {
-            
+            if (level == 2 && EnNewLVL == true)
+            {
+
                 EnLVL = Random.Range(1, 3);
 
                 EnNewLVL = false;
+            }
+
+            if (level == 3 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(1, 4);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 4 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(2, 5);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 5 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(3, 6);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 6 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(4, 7);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 7 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(5, 8);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 8 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(6, 9);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 9 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(7, 10);
+
+                EnNewLVL = false;
+            }
+
+            if (level == 10 && EnNewLVL == true)
+            {
+
+                EnLVL = Random.Range(8, 11);
+
+                EnNewLVL = false;
+            }
         }
-
-        if (level == 3 && EnNewLVL == true)
+    else if (PersistentManagerScript.Instance.WorldMapPos == 5) // Volcanic are enemy level always 11-15
         {
-
-            EnLVL = Random.Range(1, 4);
+            EnLVL = Random.Range(11, 16); // Level 15 is extra for testing
 
             EnNewLVL = false;
+
+
         }
 
-        if (level == 4 && EnNewLVL == true)
-        {
 
-            EnLVL = Random.Range(2, 5);
 
-            EnNewLVL = false;
-        }
-
-        if (level == 5 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(3, 6);
-
-            EnNewLVL = false;
-        }
-
-        if (level == 6 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(4, 7);
-
-            EnNewLVL = false;
-        }
-
-        if (level == 7 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(5, 8);
-
-            EnNewLVL = false;
-        }
-
-        if (level == 8 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(6, 9);
-
-            EnNewLVL = false;
-        }
-
-        if (level == 9 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(7, 10);
-
-            EnNewLVL = false;
-        }
-
-        if (level == 10 && EnNewLVL == true)
-        {
-
-            EnLVL = Random.Range(8, 11);
-
-            EnNewLVL = false;
-        }
 
     }
+
+
+
 
 
     void EnemyLevel()
@@ -361,6 +379,56 @@ public class EnemyLevelManager : MonoBehaviour
             EnCon = 12;
             EnWis = 11;
         }
+
+        if (EnLVL == 11)
+        {
+            EnStr = 21;
+            EnDex = 17;
+            EnInt = 13;
+            EnAgi = 16;
+            EnCon = 13;
+            EnWis = 12;
+        }
+
+        if (EnLVL == 12)
+        {
+            EnStr = 22;
+            EnDex = 18;
+            EnInt = 14;
+            EnAgi = 17;
+            EnCon = 14;
+            EnWis = 12;
+        }
+
+        if (EnLVL == 13)
+        {
+            EnStr = 23;
+            EnDex = 19;
+            EnInt = 15;
+            EnAgi = 18;
+            EnCon = 15;
+            EnWis = 13;
+        }
+
+        if (EnLVL == 14)
+        {
+            EnStr = 24;
+            EnDex = 20;
+            EnInt = 16;
+            EnAgi = 19;
+            EnCon = 16;
+            EnWis = 14;
+        }
+        ////////////////////////////
+        if (EnLVL == 15)
+        {
+            EnStr = 25;
+            EnDex = 21;
+            EnInt = 17;
+            EnAgi = 20;
+            EnCon = 17;
+            EnWis = 15;
+        }
         DrawEnStarts();
     }
 
@@ -466,6 +534,56 @@ public class EnemyLevelManager : MonoBehaviour
             EnAgi = 17;
             EnCon = 12;
             EnWis = 11;
+        }
+
+        if (EnLVL == 11)
+        {
+            EnStr = 13;
+            EnDex = 21;
+            EnInt = 17;
+            EnAgi = 18;
+            EnCon = 13;
+            EnWis = 12;
+        }
+
+        if (EnLVL == 12)
+        {
+            EnStr = 14;
+            EnDex = 22;
+            EnInt = 18;
+            EnAgi = 19;
+            EnCon = 14;
+            EnWis = 12;
+        }
+
+        if (EnLVL == 13)
+        {
+            EnStr = 15;
+            EnDex = 23;
+            EnInt = 19;
+            EnAgi = 20;
+            EnCon = 15;
+            EnWis = 13;
+        }
+
+        if (EnLVL == 14)
+        {
+            EnStr = 16;
+            EnDex = 24;
+            EnInt = 20;
+            EnAgi = 21;
+            EnCon = 16;
+            EnWis = 14;
+        }
+        ////////////////////////////
+        if (EnLVL == 15)
+        {
+            EnStr = 17;
+            EnDex = 25;
+            EnInt = 21;
+            EnAgi = 22;
+            EnCon = 17;
+            EnWis = 15;
         }
 
         DrawEnStarts();
@@ -575,6 +693,55 @@ public class EnemyLevelManager : MonoBehaviour
             EnWis = 11;
         }
 
+        if (EnLVL == 11)
+        {
+            EnStr = 17;
+            EnDex = 13;
+            EnInt = 21;
+            EnAgi = 15;
+            EnCon = 13;
+            EnWis = 12;
+        }
+
+        if (EnLVL == 12)
+        {
+            EnStr = 18;
+            EnDex = 14;
+            EnInt = 22;
+            EnAgi = 16;
+            EnCon = 14;
+            EnWis = 13;
+        }
+
+        if (EnLVL == 13)
+        {
+            EnStr = 19;
+            EnDex = 15;
+            EnInt = 23;
+            EnAgi = 17;
+            EnCon = 15;
+            EnWis = 14;
+        }
+
+        if (EnLVL == 14)
+        {
+            EnStr = 20;
+            EnDex = 16;
+            EnInt = 24;
+            EnAgi = 18;
+            EnCon = 16;
+            EnWis = 15;
+        }
+        ////////////////////////////
+        if (EnLVL == 15)
+        {
+            EnStr = 21;
+            EnDex = 17;
+            EnInt = 25;
+            EnAgi = 19;
+            EnCon = 17;
+            EnWis = 16;
+        }
         DrawEnStarts();
     }
 

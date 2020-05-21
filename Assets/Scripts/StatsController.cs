@@ -13,9 +13,28 @@ public class StatsController : MonoBehaviour
 
     public GameObject CritHitObject;
 
+    public GameObject IndicatorTama;
+    public GameObject IndicatorWorld;
+    public GameObject IndicatorCanvSkillP;
+
     void Update()
     {
-        if (PersistentManagerScript.Instance.IsCritical == true)
+        if (PersistentManagerScript.Instance.SkillPoints >= 1)
+        {
+            IndicatorTama.SetActive(true);
+            IndicatorWorld.SetActive(true);
+            IndicatorCanvSkillP.SetActive(true);
+        }
+        else
+        {
+            IndicatorTama.SetActive(false);
+            IndicatorWorld.SetActive(false);
+            IndicatorCanvSkillP.SetActive(false);
+        }
+
+
+
+            if (PersistentManagerScript.Instance.IsCritical == true)
         {
             CritHitObject.SetActive(true);
 

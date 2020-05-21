@@ -15,7 +15,7 @@ public class EnHealthBarScript : MonoBehaviour
     public void SetMaxHealth(int health)
     {
         
-        health = PersistentManagerScript.Instance.EnemyHealth;
+        health = PersistentManagerScript.Instance.EnemyMaxHealth;
         slider.maxValue = health;
         slider.value = health;
 
@@ -31,5 +31,10 @@ public class EnHealthBarScript : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
+    void Update()
+    {
+        slider.maxValue = PersistentManagerScript.Instance.EnemyMaxHealth;
+
+    }
 
 }

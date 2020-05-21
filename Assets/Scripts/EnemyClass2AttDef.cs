@@ -826,6 +826,7 @@ public class EnemyClass2AttDef : MonoBehaviour
 
     IEnumerator EnemyBasicAttack()
     {
+
         //PersistentManagerScript.Instance.BasicAttack = false;
         if (PlayerDefUP == true)
         {
@@ -871,7 +872,7 @@ public class EnemyClass2AttDef : MonoBehaviour
                     EnDexNerf -= (EnDexNerf / 4);
                     EnDexBuff -= (EnDexBuff / 4);
                     //WeakenEffect -= 1;
-
+                    yield return new WaitForSeconds(DamageToAttack);
 
                 }
 
@@ -880,6 +881,7 @@ public class EnemyClass2AttDef : MonoBehaviour
                     PoisonEffect -= 1;
                     EnHealth -= 5;
                     PersistentManagerScript.Instance.PoisonActive = true;
+                    yield return new WaitForSeconds(DamageToAttack);
                 }
                 else
                 {
@@ -892,6 +894,7 @@ public class EnemyClass2AttDef : MonoBehaviour
                     //NoStatusEffect = EnCon;
                     EnCon -= 5;
                     PersistentManagerScript.Instance.ConfusionActive = true;
+                    yield return new WaitForSeconds(DamageToAttack);
                 }
 
                 if (SlowEffect >= 2)
@@ -900,6 +903,7 @@ public class EnemyClass2AttDef : MonoBehaviour
 
                     SlowEffect -= 1;
                     PersistentManagerScript.Instance.SlowActive = true;
+                    yield return new WaitForSeconds(DamageToAttack);
                 }
 
 
@@ -908,6 +912,7 @@ public class EnemyClass2AttDef : MonoBehaviour
                     EnHealth -= 5;
                     BurnEffect -= 1;
                     PersistentManagerScript.Instance.BurnActive = true;
+                    yield return new WaitForSeconds(DamageToAttack);
                 }
                 else
                 {
@@ -915,8 +920,10 @@ public class EnemyClass2AttDef : MonoBehaviour
                 }
 
 
-                yield return new WaitForSeconds(DamageToAttack);
+                //yield return new WaitForSeconds(DamageToAttack);
 
+                PersistentManagerScript.Instance.EnemyAnimAttack = true;
+                yield return new WaitForSeconds(0.3f);
 
 
                 if (PlayerClass == 1)

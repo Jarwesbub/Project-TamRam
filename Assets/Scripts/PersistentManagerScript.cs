@@ -9,8 +9,8 @@ public class PersistentManagerScript : MonoBehaviour
 
     public int PlayerHealth = 300; // WIP
     public int PlayerMaxHealth = 50;
-    public int PlayerMana = 100;
-    public int maxMana = 100;
+    public int PlayerMana;
+    public int maxMana = 50;
     public bool Run = false;
 
 
@@ -28,11 +28,13 @@ public class PersistentManagerScript : MonoBehaviour
     public bool FightScreen = false;
     public bool EnemyTurn = false;
     public bool PlayerTurn = false;
+    public bool EnemyAnimAttack = false;
 
     public bool BasicAttack = false;
     public bool SuperAttack = false;
     public bool UltraAttack = false;
     public bool BasicDefense = false;
+    public bool BasicAnimAttack = false;
 
     public bool FightTransition = false;
     public bool PlayerCanMove = true;
@@ -60,7 +62,7 @@ public class PersistentManagerScript : MonoBehaviour
 
     public int WorldMapPos; // 1 = Home, 2 = Grass, 3 = Oasis, 4 = Tundra, 5 = Volcanic
     public bool MapChange = false;
-
+    
 
 
     private void Awake()

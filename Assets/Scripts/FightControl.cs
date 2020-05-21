@@ -8,7 +8,6 @@ public class FightControl : MonoBehaviour
 {
     
     bool FightWait = false;
-
     
     float FightWaitTime = 2f;
     float FightTimer;
@@ -25,8 +24,10 @@ public class FightControl : MonoBehaviour
     public GameObject EnemyStats;
     public GameObject RunButton;
 
+
     public void Update()
     {
+
         if (PersistentManagerScript.Instance.FightScreen == true)
         {
             if (PersistentManagerScript.Instance.PlayerClass == 1)
@@ -87,6 +88,7 @@ public class FightControl : MonoBehaviour
         {
             PersistentManagerScript.Instance.PlayerTurn = true;
             PersistentManagerScript.Instance.BasicAttack = true;
+            PersistentManagerScript.Instance.BasicAnimAttack = true;
 
             FightWait = true;
 
