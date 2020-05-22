@@ -19,6 +19,10 @@ public class XPControl : MonoBehaviour
 
     public int XPNextLVL;
 
+    public bool LevelNext = false;
+
+    public int Check = 0;
+
     void Start()
     {
         XPStart = PersistentManagerScript.Instance.XPStart;
@@ -45,11 +49,17 @@ public class XPControl : MonoBehaviour
 
     void LevelUP()
     {
+        
         LevelUPControl.SetActive(true);
     }
 
     void XPLevelCheck()
     {
+        if (PersistentManagerScript.Instance.Lvl >= PlayerLvlCheck + 1) // TESTING
+        {
+            LevelNext = true;
+            
+        }
         /*
         if (XPpoints >= 0)
         {
@@ -57,69 +67,86 @@ public class XPControl : MonoBehaviour
             PersistentManagerScript.Instance.LvlGet = true;
         }
         */
+        
 
-        if (XPpoints >= 200)//200 original value
+        //if (LevelNext == true)
         {
-            PersistentManagerScript.Instance.Lvl = 2;
-            PersistentManagerScript.Instance.LvlGet = true;
+
+            if (XPpoints >= 200 && Check == 0)//200 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 2;
+                PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
+                Check += 1;
+
+            }
+
+            if (XPpoints >= 400 && Check == 1) //400 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 3;
+                PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
+                Check += 1;
+            }
+
+            if (XPpoints >= 800 && Check == 2) //800 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 4;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 1600 && Check == 3) //1600 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 5;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 3200 && Check == 4) //3200  original value
+            {
+                PersistentManagerScript.Instance.Lvl = 6;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 6400 && Check == 5) //6400 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 7;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 12800 && Check == 6) //12800 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 8;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 25600 && Check == 7) //25600 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 9;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
+
+            if (XPpoints >= 51200 && Check == 8) //51200 original value
+            {
+                PersistentManagerScript.Instance.Lvl = 10;
+                PersistentManagerScript.Instance.LvlGet = true;
+                Check += 1;
+            }
 
         }
-
-        if (XPpoints >= 400) //400 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 3;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 800) //800 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 4;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 1600) //1600 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 5;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 3200) //3200  original value
-        {
-            PersistentManagerScript.Instance.Lvl = 6;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 6400) //6400 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 7;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 12800) //12800 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 8;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 25600) //25600 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 9;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-        if (XPpoints >= 51200) //51200 original value
-        {
-            PersistentManagerScript.Instance.Lvl = 10;
-            PersistentManagerScript.Instance.LvlGet = true;
-        }
-
-       
+        
         if (PersistentManagerScript.Instance.Lvl >= PlayerLvlCheck+1)
         {
             LevelUP();
+            PlayerLvlCheck = PersistentManagerScript.Instance.Lvl;
         }
-        
-
+      
+    
         
 
     }
