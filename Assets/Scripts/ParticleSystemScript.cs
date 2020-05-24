@@ -7,6 +7,8 @@ public class ParticleSystemScript : MonoBehaviour
     public GameObject ParticleEffects;
     public GameObject StunAttack;
     public GameObject StunGet;
+    public GameObject WeakenAttack;
+    public GameObject WeakenStay;
     public GameObject WarriorDefense;
     public GameObject BurnAttack;
     public GameObject BurnStay;
@@ -23,8 +25,34 @@ public class ParticleSystemScript : MonoBehaviour
     public int ActiveSuper = 0; // When Particle system starts in Update()
     public int ActiveUltra = 0;
 
+    // StayNumb 13 -> First letter = Class number
+    // StayNumb 13 -> Second Letter = Attack number: 1 = basic, 2 = super, 3 = ultra, 4 = defense
 
 
+    IEnumerator StayWait(int StayNumb)
+    {
+        int Stay = StayNumb;
+        yield return new WaitForSeconds(0.5f);
+
+        if (Stay == 13)
+            WeakenStay.GetComponent<ParticleSystem>().Play();
+
+        if (Stay == 22)
+            PoisonStay.GetComponent<ParticleSystem>().Play();
+
+        if (Stay == 23)
+            SlowStay.GetComponent<ParticleSystem>().Play();
+
+        if (Stay == 32)
+            ConfDamage.GetComponent<ParticleSystem>().Play();
+
+        if (Stay == 33)
+            BurnStay.GetComponent<ParticleSystem>().Play();
+
+        yield return Stay;
+
+        
+    }
 
 
     // Update is called once per frame
@@ -38,6 +66,7 @@ public class ParticleSystemScript : MonoBehaviour
         {
             ParticleEffects.SetActive(false);
         }
+
         if (PersistentManagerScript.Instance.BasicDefense == true)
         {
             ActiveDefense = 0;
@@ -51,7 +80,7 @@ public class ParticleSystemScript : MonoBehaviour
             ActiveUltra = 0;
         }
 
-        if (PersistentManagerScript.Instance.BasicDefense == true && PersistentManagerScript.Instance.PlayerClass == 1)
+        if (PersistentManagerScript.Instance.BasicDefense == true)
         {
             WarriorDefense.GetComponent<ParticleSystem>().Play();
         }
@@ -61,26 +90,62 @@ public class ParticleSystemScript : MonoBehaviour
             StunAttack.GetComponent<ParticleSystem>().Play();
         }
 
+        if (PersistentManagerScript.Instance.UltraAttack == true && PersistentManagerScript.Instance.PlayerClass == 1)
+        {
+            PersistentManagerScript.Instance.BasicAnimAttack = true;
+            WeakenAttack.GetComponent<ParticleSystem>().Play();
+            for (int i = ActiveUltra; i < 1; i++)
+            {
+                StartCoroutine(StayWait(13));
+                //WeakenStay.GetComponent<ParticleSystem>().Play();
+                ActiveUltra += 1;
+            }
+        }
 
         if (PersistentManagerScript.Instance.SuperAttack == true && PersistentManagerScript.Instance.PlayerClass == 2)
         {
             PoisonAttack.GetComponent<ParticleSystem>().Play();
+            for (int i = ActiveSuper; i < 1; i++)
+            {
+                StartCoroutine(StayWait(22));
+                //PoisonStay.GetComponent<ParticleSystem>().Play();
+                ActiveSuper += 1;
+            }
         }
 
 
         if (PersistentManagerScript.Instance.UltraAttack == true && PersistentManagerScript.Instance.PlayerClass == 2)
         {
             SlowAttack.GetComponent<ParticleSystem>().Play();
+            for (int i = ActiveUltra; i < 1; i++)
+            {
+                StartCoroutine(StayWait(23));
+                //SlowStay.GetComponent<ParticleSystem>().Play();
+                ActiveUltra += 1;
+            }
+            
         }
 
         if (PersistentManagerScript.Instance.UltraAttack == true && PersistentManagerScript.Instance.PlayerClass == 3)
         {
             BurnAttack.GetComponent<ParticleSystem>().Play();
+            for (int i = ActiveUltra; i < 1; i++)
+            {
+                StartCoroutine(StayWait(33));
+                //BurnStay.GetComponent<ParticleSystem>().Play();
+                ActiveUltra += 1;
+            }
         }
 
         if (PersistentManagerScript.Instance.SuperAttack == true && PersistentManagerScript.Instance.PlayerClass == 3)
         {
             ConfAttack.GetComponent<ParticleSystem>().Play();
+            for (int i = ActiveSuper; i < 1; i++)
+            {
+                StartCoroutine(StayWait(32));
+                //ConfDamage.GetComponent<ParticleSystem>().Play();
+                ActiveSuper += 1;
+            }
         }
 
 
@@ -98,60 +163,43 @@ public class ParticleSystemScript : MonoBehaviour
         }
 
 
-        if (PersistentManagerScript.Instance.PoisonActive == true)
+        if (PersistentManagerScript.Instance.WeakenActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
-            for (int i = ActiveSuper; i < 1; i++)
-            {
-                PoisonStay.GetComponent<ParticleSystem>().Play();
-                ActiveSuper += 1;
-            }
+            WeakenStay.GetComponent<ParticleSystem>().Stop();
         }
-        else
+
+        if (PersistentManagerScript.Instance.PoisonActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
             PoisonStay.GetComponent<ParticleSystem>().Stop();
         }
 
-        if (PersistentManagerScript.Instance.SlowActive == true)
-        {
-            for (int i = ActiveUltra; i < 1; i++)
-            {
-                SlowStay.GetComponent<ParticleSystem>().Play();
-                ActiveUltra += 1;
-            }
-        }
-        else
+
+        if (PersistentManagerScript.Instance.SlowActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
             SlowStay.GetComponent<ParticleSystem>().Stop();
         }
 
-        if (PersistentManagerScript.Instance.BurnActive == true)
-        {
-            for (int i = ActiveUltra; i < 1; i++)
-            {
-                BurnStay.GetComponent<ParticleSystem>().Play();
-                ActiveUltra += 1;
-            }
-        }
-        else
+
+        if (PersistentManagerScript.Instance.BurnActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
             BurnStay.GetComponent<ParticleSystem>().Stop();
         }
 
 
-        if (PersistentManagerScript.Instance.ConfusionActive == true)
+        if (PersistentManagerScript.Instance.ConfusionActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
-            for (int i = ActiveSuper; i < 1; i++)
-            {
-                ConfDamage.GetComponent<ParticleSystem>().Play();
-                ActiveSuper += 1;
-            }
-        }
-        else
-        {
+
             ConfDamage.GetComponent<ParticleSystem>().Stop();
         }
 
-
+        if (PersistentManagerScript.Instance.EnDies >= 1)
+        {
+            WeakenStay.GetComponent<ParticleSystem>().Stop();
+            PoisonStay.GetComponent<ParticleSystem>().Stop();
+            SlowStay.GetComponent<ParticleSystem>().Stop();
+            ConfDamage.GetComponent<ParticleSystem>().Stop();
+            BurnStay.GetComponent<ParticleSystem>().Stop();
+        }
 
         
 

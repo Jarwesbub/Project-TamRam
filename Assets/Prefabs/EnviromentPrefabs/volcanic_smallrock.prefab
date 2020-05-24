@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8998464163952861058}
   - component: {fileID: 2562110357490473451}
   - component: {fileID: -3391202550186972107}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: volcanic_smallrock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

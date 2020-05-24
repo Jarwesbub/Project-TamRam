@@ -34,6 +34,7 @@ public class PersistentManagerScript : MonoBehaviour
     public bool SuperAttack = false;
     public bool UltraAttack = false;
     public bool BasicDefense = false;
+    public bool DefenseActiveColor = false;
     public bool BasicAnimAttack = false;
 
     public bool FightTransition = false;

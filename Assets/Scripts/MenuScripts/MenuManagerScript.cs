@@ -100,14 +100,6 @@ public class MenuManagerScript : MonoBehaviour
 
     void Update()
     {
-        /*
-        if (Input.GetKeyDown("l"))
-        {
-            PersistentManagerScript.Instance.FightScreen = false;
-
-        }
-        */
-
 
         if (PersistentManagerScript.Instance.FightScreen == true)
         {

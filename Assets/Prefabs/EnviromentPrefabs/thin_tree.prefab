@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8395084957287413354}
   - component: {fileID: 719773701710151126}
   - component: {fileID: 4813703782224512234}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: thin_tree
   m_TagString: Untagged
   m_Icon: {fileID: 0}

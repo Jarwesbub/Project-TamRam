@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2510431627853922111}
   - component: {fileID: 2433667160286460386}
   - component: {fileID: 5776929169212427021}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: volcanic_largerock
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Diagnostics;
 using UnityEngine;
 
 public class SpriteColorControl : MonoBehaviour
@@ -37,7 +38,24 @@ public class SpriteColorControl : MonoBehaviour
             StartCoroutine(SpriteGetHP());
         }
 
+        if (PersistentManagerScript.Instance.DefenseActiveColor == true)
+        {
+            PersistentManagerScript.Instance.DefenseActiveColor = false;
+            StartCoroutine(Class1DefenseCounter());
+        }
+
     }
+
+    IEnumerator Class1DefenseCounter()
+    {
+        float time = 2f;
+        m_SpriteRenderer.color = Color.grey;
+        yield return new WaitForSeconds(time);
+
+        m_SpriteRenderer.color = new Color(255, 255, 255);
+
+    }
+
 
     IEnumerator SpriteDamage()
     {

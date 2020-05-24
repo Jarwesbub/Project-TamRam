@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6657274377922037699}
   - component: {fileID: 7104619399399081615}
   - component: {fileID: 1626275466321714453}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oasis_bigcactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}

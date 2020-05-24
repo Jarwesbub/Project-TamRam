@@ -186,6 +186,7 @@ public class FightControl : MonoBehaviour
         {
             PersistentManagerScript.Instance.PlayerTurn = true;
             PersistentManagerScript.Instance.BasicDefense = true;
+            PersistentManagerScript.Instance.DefenseActiveColor = true;
 
             FightWait = true;
 
@@ -202,7 +203,4 @@ public class FightControl : MonoBehaviour
         FightWait = false;
     }
     
-
-
-
 }

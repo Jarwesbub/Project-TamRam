@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6888123819607600186}
   - component: {fileID: 6075167774907253215}
   - component: {fileID: 1796892255999961334}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: tundra_spruce
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -16,12 +16,14 @@ public class XPControl : MonoBehaviour
 
     public bool XPStart = false;
     public int PlayerLvlCheck;
+    public int EnemyLvlCheck;
 
     public int XPNextLVL;
 
     public bool LevelNext = false;
 
     public int Check = 0;
+    public bool EnemyDies = false;
 
     void Start()
     {
@@ -29,7 +31,7 @@ public class XPControl : MonoBehaviour
         XPpoints = PersistentManagerScript.Instance.XPpoints;
 
         //LevelUPControl.SetActive(false);
-
+        EnemyDies = false;
     }
 
 
@@ -93,6 +95,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 4;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -100,6 +103,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 5;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -107,6 +111,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 6;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -114,6 +119,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 7;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -121,6 +127,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 8;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -128,6 +135,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 9;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -135,6 +143,7 @@ public class XPControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.Lvl = 10;
                 PersistentManagerScript.Instance.LvlGet = true;
+                LevelNext = false;
                 Check += 1;
             }
 
@@ -153,39 +162,39 @@ public class XPControl : MonoBehaviour
 
     void NextLevelValue()
     {
-       if (XPpoints >= 0 && XPpoints <= 201)
+       if (XPpoints >= 0 && XPpoints <= 198)
         {
             XPNextLVL = 200;
         }
-        if (XPpoints >= 201 && XPpoints <= 401)
+        if (XPpoints >= 199 && XPpoints <= 399)
         {
             XPNextLVL = 400;
         }
-        if (XPpoints >= 401 && XPpoints <= 801)
+        if (XPpoints >= 398 && XPpoints <= 799)
         {
             XPNextLVL = 800;
         }
-        if (XPpoints >= 801 && XPpoints <= 1601)
+        if (XPpoints >= 798 && XPpoints <= 1599)
         {
             XPNextLVL = 1600;
         }
-        if (XPpoints >= 1601 && XPpoints <= 3201)
+        if (XPpoints >= 1598 && XPpoints <= 3199)
         {
             XPNextLVL = 3200;
         }
-        if (XPpoints >= 3201 && XPpoints <= 6401)
+        if (XPpoints >= 3198 && XPpoints <= 6399)
         {
             XPNextLVL = 6400;
         }
-        if (XPpoints >= 6401 && XPpoints <= 12801)
+        if (XPpoints >= 6398 && XPpoints <= 12799)
         {
             XPNextLVL = 12800;
         }
-        if (XPpoints >= 12801 && XPpoints <= 25601)
+        if (XPpoints >= 12798 && XPpoints <= 25599)
         {
             XPNextLVL = 25600;
         }
-        if (XPpoints >= 25601 && XPpoints <= 51201)
+        if (XPpoints >= 25598 && XPpoints <= 51199)
         {
             XPNextLVL = 51200;
         }
@@ -201,142 +210,155 @@ public class XPControl : MonoBehaviour
 
         if (PersistentManagerScript.Instance.XPScreen == 0)
         {
+            EnemyDies = false;
             PersistentManagerScript.Instance.XPStart = true;
             PlayerLvlCheck = PersistentManagerScript.Instance.Lvl;
+            EnemyLvlCheck = PersistentManagerScript.Instance.EnLVL;
         }
 
 
-            if (PersistentManagerScript.Instance.XPScreen == 1 && PersistentManagerScript.Instance.XPStart == true) // Fightscreen XPScreen is activated
+        if (PersistentManagerScript.Instance.XPScreen == 1 && PersistentManagerScript.Instance.XPStart == true) // Fightscreen XPScreen is activated
         {
             LevelUPControl.SetActive(false);
-            
 
 
-            if (PersistentManagerScript.Instance.EnLvl == 1 && PersistentManagerScript.Instance.EnDies == 1)
+            if (EnemyDies == false)
             {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 25;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 25;
-                DrawXP();
-                XPLevelCheck();
+                if (EnemyLvlCheck == 1 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 25;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 25;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 2 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 50;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 50;
-                DrawXP();
-                XPLevelCheck();
+                if (EnemyLvlCheck == 2 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 50;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 50;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 3 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 100;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 100;
-                DrawXP();
-                XPLevelCheck();
+                if (EnemyLvlCheck == 3 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 100;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 100;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 4 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 150;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 150;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 4 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 150;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 150;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 5 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 300;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 300;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 5 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 300;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 300;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 6 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 450;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 450;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 6 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 450;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 450;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 7 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 900;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 900;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 7 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 900;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 900;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 8 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 1350;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 1350;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 8 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 1350;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 1350;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 9 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 2700;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 2700;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 9 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 2700;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 2700;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
-            }
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
 
-            if (PersistentManagerScript.Instance.EnLvl == 10 && PersistentManagerScript.Instance.EnDies == 1)
-            {
-                PersistentManagerScript.Instance.EnDies = 2;
-                PersistentManagerScript.Instance.XPpoints += 4050;
-                XPpoints = PersistentManagerScript.Instance.XPpoints;
-                XPpointsDraw = 4050;
-                DrawXP();
-                XPLevelCheck();
+                if (PersistentManagerScript.Instance.EnLvl == 10 && PersistentManagerScript.Instance.EnDies == 1)
+                {
+                    EnemyDies = true;
+                    PersistentManagerScript.Instance.EnDies = 2;
+                    PersistentManagerScript.Instance.XPpoints += 4050;
+                    XPpoints = PersistentManagerScript.Instance.XPpoints;
+                    XPpointsDraw = 4050;
+                    DrawXP();
+                    XPLevelCheck();
 
-                PersistentManagerScript.Instance.XPStart = false;
+                    PersistentManagerScript.Instance.XPStart = false;
+                }
+
+
             }
 
 
         }
-
-
-
 
     }
 

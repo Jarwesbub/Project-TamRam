@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8535100610996297133}
   - component: {fileID: 4763923803061523105}
   - component: {fileID: 2574286388183622947}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: oasis_tumbleweed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
