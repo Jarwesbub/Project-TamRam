@@ -152,7 +152,7 @@ public class EnemyClass1AttDef : MonoBehaviour
 
         PlayerClass = PersistentManagerScript.Instance.PlayerClass;
         STR = PersistentManagerScript.Instance.Str;
-        CON = PersistentManagerScript.Instance.Con;
+        CON = PersistentManagerScript.Instance.Con / 2; ///////////////////
         DEX = PersistentManagerScript.Instance.Dex;
         AGI = PersistentManagerScript.Instance.Agi;
         INT = PersistentManagerScript.Instance.Int;

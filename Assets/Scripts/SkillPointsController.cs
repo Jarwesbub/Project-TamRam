@@ -146,7 +146,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void StrAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Str <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Str += 1;
             SkillPoints -= 1;
@@ -156,7 +156,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void ConAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Con <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Con += 1;
             SkillPoints -= 1;
@@ -166,7 +166,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void DexAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Dex <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Dex += 1;
             SkillPoints -= 1;
@@ -176,7 +176,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void AgiAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Agi <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Agi += 1;
             SkillPoints -= 1;
@@ -186,7 +186,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void IntAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Int <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Int += 1;
             SkillPoints -= 1;
@@ -196,7 +196,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void LuckAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Luck <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Luck += 1;
             SkillPoints -= 1;
@@ -206,7 +206,7 @@ public class SkillPointsController : MonoBehaviour
 
     public void WisAdd()
     {
-        if (SkillPoints >= 1) //if there is more than 0 skill points available
+        if (SkillPoints >= 1 && PersistentManagerScript.Instance.Wis <= 21) //if there is more than 0 skill points available
         {
             PersistentManagerScript.Instance.Wis += 1;
             SkillPoints -= 1;
