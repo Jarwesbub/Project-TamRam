@@ -142,6 +142,7 @@ public class FightControl : MonoBehaviour
             {
                 PersistentManagerScript.Instance.PlayerTurn = true;
                 PersistentManagerScript.Instance.UltraAttack = true;
+                PersistentManagerScript.Instance.BasicAnimTackle = true;
 
                 FightWait = true;
 

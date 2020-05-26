@@ -18,6 +18,7 @@ public class ParticleSystemScript : MonoBehaviour
     public GameObject PoisonStay;
     public GameObject SlowAttack;
     public GameObject SlowStay;
+    public GameObject Class3BasicAttack;
 
     public GameObject GetHP;
 
@@ -67,6 +68,12 @@ public class ParticleSystemScript : MonoBehaviour
             ParticleEffects.SetActive(false);
         }
 
+        if (PersistentManagerScript.Instance.BasicAttack == true && PersistentManagerScript.Instance.PlayerClass == 3)
+        {
+            Class3BasicAttack.GetComponent<ParticleSystem>().Play();
+        }
+
+
         if (PersistentManagerScript.Instance.BasicDefense == true)
         {
             ActiveDefense = 0;
@@ -92,7 +99,7 @@ public class ParticleSystemScript : MonoBehaviour
 
         if (PersistentManagerScript.Instance.UltraAttack == true && PersistentManagerScript.Instance.PlayerClass == 1)
         {
-            PersistentManagerScript.Instance.BasicAnimAttack = true;
+            
             WeakenAttack.GetComponent<ParticleSystem>().Play();
             for (int i = ActiveUltra; i < 1; i++)
             {
@@ -148,7 +155,7 @@ public class ParticleSystemScript : MonoBehaviour
             }
         }
 
-
+        
         if (PersistentManagerScript.Instance.StunActive == true)
         {
             for (int i = ActiveSuper; i < 1; i++)
@@ -161,7 +168,12 @@ public class ParticleSystemScript : MonoBehaviour
         {
             StunGet.GetComponent<ParticleSystem>().Stop();
         }
+        
 
+        if (PersistentManagerScript.Instance.StunActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
+        {
+            StunGet.GetComponent<ParticleSystem>().Stop();
+        }
 
         if (PersistentManagerScript.Instance.WeakenActive == false && PersistentManagerScript.Instance.PlayerTurn == true)
         {
@@ -211,7 +223,7 @@ public class ParticleSystemScript : MonoBehaviour
     public void GetHPTamaScreen()
     {
         GetHP.GetComponent<ParticleSystem>().Play();
-        PersistentManagerScript.Instance.PlayerHealth = 100;
+        PersistentManagerScript.Instance.PlayerHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
     }
 
 

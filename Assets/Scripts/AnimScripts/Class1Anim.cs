@@ -21,27 +21,28 @@ public class Class1Anim : MonoBehaviour
     void Update()
     {
 
-
+        /*
         if (AnimPlay == 0 && Input.GetKeyDown("x"))
         {
             anim.Play();
             animator.SetTrigger("BasicAttack");
 
         }
+        */
         if (PersistentManagerScript.Instance.BasicAnimAttack == true)
         {
             anim.Play();
             animator.SetTrigger("BasicAttack");
             PersistentManagerScript.Instance.BasicAnimAttack = false;
         }
+        if (PersistentManagerScript.Instance.BasicAnimTackle == true)
+        {
+            anim.Play();
+            animator.SetTrigger("BasicTackle");
+            PersistentManagerScript.Instance.BasicAnimTackle = false;
+        }
+
 
     }
-
-    public void AnimationEnd()
-    {
-
-
-    }
-
 
 }

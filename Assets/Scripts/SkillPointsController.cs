@@ -160,6 +160,7 @@ public class SkillPointsController : MonoBehaviour
         {
             PersistentManagerScript.Instance.Con += 1;
             SkillPoints -= 1;
+            PersistentManagerScript.Instance.PlayerHealth = PersistentManagerScript.Instance.Con * 10;
         }
 
     }
@@ -208,8 +209,10 @@ public class SkillPointsController : MonoBehaviour
     {
         if (SkillPoints >= 1 && PersistentManagerScript.Instance.Wis <= 21) //if there is more than 0 skill points available
         {
+
             PersistentManagerScript.Instance.Wis += 1;
             SkillPoints -= 1;
+            PersistentManagerScript.Instance.PlayerMana = (PersistentManagerScript.Instance.Wis * 10);
         }
 
     }

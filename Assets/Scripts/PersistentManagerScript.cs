@@ -36,7 +36,7 @@ public class PersistentManagerScript : MonoBehaviour
     public bool BasicDefense = false;
     public bool DefenseActiveColor = false;
     public bool BasicAnimAttack = false;
-
+    public bool BasicAnimTackle = false;
     public bool FightTransition = false;
     public bool PlayerCanMove = true;
 
@@ -95,7 +95,7 @@ public class PersistentManagerScript : MonoBehaviour
 
     public void Update()
     {
-
+        maxMana = Wis * 10;
         PlayerMaxHealth = Con * 10;
 
         if (PlayerMaxHealth >= 60)
