@@ -33,8 +33,13 @@ public class XPControl : MonoBehaviour
         //LevelUPControl.SetActive(false);
         EnemyDies = false;
     }
+    /*
+    void OnEnable()
+    {
+        XPpointsTxt.text = " ";
 
-
+    }
+    */
 
     void DrawXP()
     {
@@ -210,6 +215,7 @@ public class XPControl : MonoBehaviour
 
         if (PersistentManagerScript.Instance.XPScreen == 0)
         {
+            XPpointsTxt.text = " ";
             EnemyDies = false;
             PersistentManagerScript.Instance.XPStart = true;
             PlayerLvlCheck = PersistentManagerScript.Instance.Lvl;

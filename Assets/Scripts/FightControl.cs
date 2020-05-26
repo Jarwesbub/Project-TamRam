@@ -51,7 +51,7 @@ public class FightControl : MonoBehaviour
             if (PersistentManagerScript.Instance.PlayerClass == 3)
             {
 
-                Attack1Txt.text = "Magic Missle";
+                Attack1Txt.text = "Magic Missile";
                 Attack2Txt.text = "Brainstorm";
                 Attack3Txt.text = "Fireball";
                 DefenseTxt.text = "Arcane Protection";

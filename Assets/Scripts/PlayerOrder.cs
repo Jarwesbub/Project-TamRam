@@ -15,9 +15,11 @@ public class PlayerOrder : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        sortingOrder = 35;
-        sprite.sortingOrder = sortingOrder;
-
+        if (other.gameObject.layer == 12)
+        {
+            sortingOrder = 35;
+            sprite.sortingOrder = sortingOrder;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)

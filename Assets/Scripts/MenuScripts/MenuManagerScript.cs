@@ -53,7 +53,7 @@ public class MenuManagerScript : MonoBehaviour
             OpenWorld.SetActive(false);
             SkillPointsMenu.SetActive(false);
             MainCamera.SetActive(true);
-            CanvasStats.SetActive(false);
+            CanvasStats.SetActive(true);
         }
         //SceneManager.LoadScene("World1Scene");
         //PersistentManagerScript.Instance.Str++; //test add 1
