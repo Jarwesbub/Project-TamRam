@@ -13,6 +13,8 @@ public class TamaScreenPet : MonoBehaviour
 
     //public GameObject TamaPlayer;
     public GameObject SleepTextObj;
+    public AudioSource Buttons1;
+
 
     // Start is called before the first frame update
     void Update()
@@ -44,6 +46,7 @@ public class TamaScreenPet : MonoBehaviour
 
     public void PetButton()
     {
+        Buttons1.Play();
         anim.Play();
         animator.SetTrigger("PetButton");
 

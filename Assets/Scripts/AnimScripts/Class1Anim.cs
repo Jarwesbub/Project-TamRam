@@ -31,17 +31,23 @@ public class Class1Anim : MonoBehaviour
         */
         if (PersistentManagerScript.Instance.BasicAnimAttack == true)
         {
-            anim.Play();
+            //anim.Play();
             animator.SetTrigger("BasicAttack");
             PersistentManagerScript.Instance.BasicAnimAttack = false;
         }
         if (PersistentManagerScript.Instance.BasicAnimTackle == true)
         {
-            anim.Play();
+            //anim.Play();
             animator.SetTrigger("BasicTackle");
             PersistentManagerScript.Instance.BasicAnimTackle = false;
         }
-
+        if (PersistentManagerScript.Instance.BasicAnimJumphit == true)
+        {
+            //anim.Play();
+            animator.SetTrigger("BasicJumphit");
+            PersistentManagerScript.Instance.BasicAnimJumphit = false;
+        }
+        
 
     }
 

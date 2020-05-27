@@ -53,7 +53,47 @@ public class MapCollider : MonoBehaviour
             VolcanicBackground.SetActive(true);
         }
 
+        // ENTERING MAP 1
 
+        if (collider.gameObject.name == "EnterMap1_2")
+        {
+            PersistentManagerScript.Instance.WorldMapPos = 1;
+            PersistentManagerScript.Instance.MapChange = true;
+            GrassBackground.SetActive(false);
+            OasisBackground.SetActive(false);
+            TundraBackground.SetActive(false);
+            VolcanicBackground.SetActive(false);
+        }
+
+        if (collider.gameObject.name == "EnterMap1_3")
+        {
+            PersistentManagerScript.Instance.WorldMapPos = 1;
+            PersistentManagerScript.Instance.MapChange = true;
+            GrassBackground.SetActive(false);
+            OasisBackground.SetActive(false);
+            TundraBackground.SetActive(false);
+            VolcanicBackground.SetActive(false);
+        }
+
+        if (collider.gameObject.name == "EnterMap1_4")
+        {
+            PersistentManagerScript.Instance.WorldMapPos = 1;
+            PersistentManagerScript.Instance.MapChange = true;
+            GrassBackground.SetActive(false);
+            OasisBackground.SetActive(false);
+            TundraBackground.SetActive(false);
+            VolcanicBackground.SetActive(false);
+        }
+
+        if (collider.gameObject.name == "EnterMap1_5")
+        {
+            PersistentManagerScript.Instance.WorldMapPos = 1;
+            PersistentManagerScript.Instance.MapChange = true;
+            GrassBackground.SetActive(false);
+            OasisBackground.SetActive(false);
+            TundraBackground.SetActive(false);
+            VolcanicBackground.SetActive(false);
+        }
     }
 
 

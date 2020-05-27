@@ -184,6 +184,8 @@ public class EnemyClass3AttDef : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        PersistentManagerScript.Instance.FightMusicStart = true;
+
         RestoreStatusEffect();
         GetComponent<SpriteRenderer>().enabled = true; //Makes object visible
         GetComponent<Animator>().enabled = true;
@@ -431,6 +433,7 @@ public class EnemyClass3AttDef : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
+        PersistentManagerScript.Instance.FightMusicStart = false;
         PersistentManagerScript.Instance.EnDies = 1;
 
         /*

@@ -26,6 +26,7 @@ public class PersistentManagerScript : MonoBehaviour
     public bool IsCritical = false;
 
     public bool FightScreen = false;
+    public bool FightMusicStart = false; // trigger for music
     public bool EnemyTurn = false;
     public bool PlayerTurn = false;
     public bool EnemyAnimAttack = false;
@@ -37,6 +38,7 @@ public class PersistentManagerScript : MonoBehaviour
     public bool DefenseActiveColor = false;
     public bool BasicAnimAttack = false;
     public bool BasicAnimTackle = false;
+    public bool BasicAnimJumphit = false;
     public bool FightTransition = false;
     public bool PlayerCanMove = true;
 

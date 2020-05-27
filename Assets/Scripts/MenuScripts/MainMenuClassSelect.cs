@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuClassSelect : MonoBehaviour
 {
     public GameObject ContinueButton;
-
+    public AudioSource MenuButtons;
 
     void Start()
     {
@@ -24,6 +24,7 @@ public class MainMenuClassSelect : MonoBehaviour
 
     public void GoClassSelectScene()
     {
+        MenuButtons.Play();
         //PersistentManagerScript.Instance.PlayerHealth = 100;
         SceneManager.LoadScene("ClassSelectScene");
         
@@ -31,6 +32,7 @@ public class MainMenuClassSelect : MonoBehaviour
 
     public void ContinueGame()
     {
+        MenuButtons.Play();
         PersistentManagerScript.Instance.PlayerHealth = 100;
         SceneManager.LoadScene("World1Scene");
 
@@ -39,6 +41,7 @@ public class MainMenuClassSelect : MonoBehaviour
 
     public void ChooseClass1()
     {
+        MenuButtons.Play();
         PersistentManagerScript.Instance.PlayerHealth = 100;
         PersistentManagerScript.Instance.Lvl = 1;
         PersistentManagerScript.Instance.PlayerClass = 1;
@@ -47,6 +50,7 @@ public class MainMenuClassSelect : MonoBehaviour
 
     public void ChooseClass2()
     {
+        MenuButtons.Play();
         PersistentManagerScript.Instance.PlayerHealth = 100;
         PersistentManagerScript.Instance.Lvl = 1;
         PersistentManagerScript.Instance.PlayerClass = 2;
@@ -55,6 +59,7 @@ public class MainMenuClassSelect : MonoBehaviour
 
     public void ChooseClass3()
     {
+        MenuButtons.Play();
         PersistentManagerScript.Instance.PlayerHealth = 100;
         PersistentManagerScript.Instance.Lvl = 1;
         PersistentManagerScript.Instance.PlayerClass = 3;

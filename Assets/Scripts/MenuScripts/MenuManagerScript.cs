@@ -25,6 +25,9 @@ public class MenuManagerScript : MonoBehaviour
     public GameObject TamaPlayer;
     public GameObject SleepTextObj;
 
+    public AudioSource ScreenChange;
+    public AudioSource Buttons1;
+    public AudioSource SPButton;
 
     public void GoToWorld1()
     {
@@ -38,7 +41,7 @@ public class MenuManagerScript : MonoBehaviour
 
         PlayerMove.SetActive(true);
         PlayerFight.SetActive(false);
-
+        ScreenChange.Play();
 
         //SceneManager.LoadScene("TamaMenuScene");
         //PersistentManagerScript.Instance.Str++; //test add 1
@@ -54,6 +57,7 @@ public class MenuManagerScript : MonoBehaviour
             SkillPointsMenu.SetActive(false);
             MainCamera.SetActive(true);
             CanvasStats.SetActive(true);
+            ScreenChange.Play();
         }
         //SceneManager.LoadScene("World1Scene");
         //PersistentManagerScript.Instance.Str++; //test add 1
@@ -68,20 +72,20 @@ public class MenuManagerScript : MonoBehaviour
         TamaMenu.SetActive(false);
         MainCamera.SetActive(true);
         CanvasStats.SetActive(true);
-
+        SPButton.Play();
     }
 
     public void AddHealth() // Particle system handles this now
     {
         PersistentManagerScript.Instance.PlayerHealth = PersistentManagerScript.Instance.PlayerMaxHealth;
-
+        Buttons1.Play();
     }
 
     public void SleepButton()
     {
         StartCoroutine(Sleep());
         PersistentManagerScript.Instance.PlayerMana = PersistentManagerScript.Instance.maxMana;
-
+        Buttons1.Play();
 
     }
     IEnumerator Sleep()

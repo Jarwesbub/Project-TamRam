@@ -24,12 +24,12 @@ public class FightControl : MonoBehaviour
     public GameObject EnemyStats;
     public GameObject RunButton;
 
-
     public void Update()
     {
 
         if (PersistentManagerScript.Instance.FightScreen == true)
         {
+
             if (PersistentManagerScript.Instance.PlayerClass == 1)
             {
 
@@ -56,7 +56,7 @@ public class FightControl : MonoBehaviour
                 Attack3Txt.text = "Fireball";
                 DefenseTxt.text = "Arcane Protection";
             }
-
+            
         }
 
         if (PersistentManagerScript.Instance.HealthBarActive == true)
@@ -103,6 +103,7 @@ public class FightControl : MonoBehaviour
         {
             if (PersistentManagerScript.Instance.PlayerClass == 1 && PersistentManagerScript.Instance.PlayerMana >= 15)
             {
+                PersistentManagerScript.Instance.BasicAnimJumphit = true;
                 PersistentManagerScript.Instance.PlayerTurn = true;
                 PersistentManagerScript.Instance.SuperAttack = true;
 
