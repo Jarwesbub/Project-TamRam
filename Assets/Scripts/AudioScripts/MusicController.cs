@@ -14,6 +14,7 @@ public class MusicController : MonoBehaviour
     public AudioSource FightMap3;
     public AudioSource FightMap4;
     public AudioSource FightMap5;
+
     public Animator MusicAnim;
 
     int CurrentMap = -1;
@@ -37,7 +38,7 @@ public class MusicController : MonoBehaviour
             MusicAnim.SetTrigger("FightMusicStart");
             ThemeCheck = true;
         }
-
+        
 
         if (PersistentManagerScript.Instance.PlayerCanMove == true && ThemeCheck == true)
         {
@@ -56,7 +57,7 @@ public class MusicController : MonoBehaviour
             CurrentMap = PersistentManagerScript.Instance.WorldMapPos;
         }
 
-        
+
     }
     
     void MusicChange()
