@@ -7,10 +7,10 @@ using UnityEngine.SceneManagement;
 public class HealthController : MonoBehaviour
 {
     //public static HealthController Instance { get; set; }   // Testing if works better as Singleton
-
+    public GameObject PlayerKill;
     public int maxHealth;
     public int currentHealth;
-
+    public AudioSource Death;
     public HealthBarScript healthBar;
 
     public bool GameStart;
@@ -42,15 +42,27 @@ public class HealthController : MonoBehaviour
         
         if (currentHealth <= 0)
         {
-            //PersistentManagerScript.Instance.GameReset = true;
-            PersistentManagerScript.Instance.FightScreen = false;
-            SceneManager.LoadScene("GameoverScene");
+            StartCoroutine(PlayerDeath());
 
         }
         
 
     }
     
+    IEnumerator PlayerDeath()
+    {
+        PersistentManagerScript.Instance.PlayerTurn = false;
+        yield return new WaitForSeconds(0.5f);
+
+        PersistentManagerScript.Instance.PlayerDies = true;
+
+        yield return new WaitForSeconds(1f);
+
+        //PersistentManagerScript.Instance.GameReset = true;
+        PersistentManagerScript.Instance.FightScreen = false;
+        SceneManager.LoadScene("GameoverScene");
+
+    }
     
 }
 

@@ -12,6 +12,7 @@ public class PSClass1 : MonoBehaviour
         if (PersistentManagerScript.Instance.GameStart == true)
         {
             PersistentManagerScript.Instance.Lvl = 1;
+            PersistentManagerScript.Instance.PlayerHealth = 120;
             PersistentManagerScript.Instance.GameStart = false;
         }
 
@@ -25,8 +26,8 @@ public class PSClass1 : MonoBehaviour
         if (PersistentManagerScript.Instance.Lvl == 1)
         {
             PersistentManagerScript.Instance.Str = 13;
-            //PersistentManagerScript.Instance.Con = 12;
-            PersistentManagerScript.Instance.Con = 9;
+            //PersistentManagerScript.Instance.Con = 9;
+            PersistentManagerScript.Instance.Con = 12;
             PersistentManagerScript.Instance.Dex = 9;
             PersistentManagerScript.Instance.Agi = 9;
             PersistentManagerScript.Instance.Int = 8;

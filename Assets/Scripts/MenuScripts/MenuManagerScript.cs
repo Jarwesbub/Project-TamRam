@@ -24,10 +24,13 @@ public class MenuManagerScript : MonoBehaviour
 
     public GameObject TamaPlayer;
     public GameObject SleepTextObj;
+    public GameObject MapDisplay;
 
     public AudioSource ScreenChange;
     public AudioSource Buttons1;
     public AudioSource SPButton;
+
+    bool MapActive = false;
 
     public void GoToWorld1()
     {
@@ -74,6 +77,26 @@ public class MenuManagerScript : MonoBehaviour
         CanvasStats.SetActive(true);
         SPButton.Play();
     }
+
+    public void ShowMap()
+    {
+        if (MapActive == false)
+        {
+            ScreenChange.Play();
+            MapDisplay.SetActive(true);
+            MapActive = true;
+        }
+        else
+        {
+            ScreenChange.Play();
+            MapDisplay.SetActive(false);
+            MapActive = false;
+        }
+
+
+    }
+
+
 
     public void AddHealth() // Particle system handles this now
     {

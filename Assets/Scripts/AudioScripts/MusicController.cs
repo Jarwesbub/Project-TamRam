@@ -74,6 +74,7 @@ public class MusicController : MonoBehaviour
             FightMap4.Stop();
             FightMap5.Stop();
 
+            
             if (PersistentManagerScript.Instance.WorldMapPos == 0)
             {
                 //MusicMap1.Play();
@@ -109,6 +110,8 @@ public class MusicController : MonoBehaviour
         }
         else
         {
+
+
             if (PersistentManagerScript.Instance.WorldMapPos == 2)
             {
                 FightMap2.Play();

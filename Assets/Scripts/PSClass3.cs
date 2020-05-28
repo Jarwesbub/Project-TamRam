@@ -12,6 +12,7 @@ public class PSClass3 : MonoBehaviour
         if (PersistentManagerScript.Instance.GameStart == true)
         {
             PersistentManagerScript.Instance.Lvl = 1;
+            PersistentManagerScript.Instance.PlayerHealth = 90;
             PersistentManagerScript.Instance.GameStart = false;
         }
 

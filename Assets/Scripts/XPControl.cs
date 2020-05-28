@@ -347,7 +347,7 @@ public class XPControl : MonoBehaviour
                     PersistentManagerScript.Instance.XPStart = false;
                 }
 
-                if (PersistentManagerScript.Instance.EnLvl == 10 && PersistentManagerScript.Instance.EnDies == 1)
+                if (PersistentManagerScript.Instance.EnLvl == 10 || PersistentManagerScript.Instance.EnLvl >= 10 && PersistentManagerScript.Instance.EnDies == 1)
                 {
                     EnemyDies = true;
                     PersistentManagerScript.Instance.EnDies = 2;

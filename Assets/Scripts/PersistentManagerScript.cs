@@ -31,6 +31,9 @@ public class PersistentManagerScript : MonoBehaviour
     public bool PlayerTurn = false;
     public bool EnemyAnimAttack = false;
 
+    public bool PlayerDies = false;
+
+
     public bool BasicAttack = false;
     public bool SuperAttack = false;
     public bool UltraAttack = false;
@@ -66,11 +69,11 @@ public class PersistentManagerScript : MonoBehaviour
     public int WorldMapPos; // 1 = Home, 2 = Grass, 3 = Oasis, 4 = Tundra, 5 = Volcanic
     public bool MapChange = false;
     
-
+    //overall: 65 booleans and ints
 
     private void Awake()
     {
-       
+        
         if (Instance == null) //if instance contains no data (when game starts) -> dont destroy
         {
             Instance = this;
@@ -81,7 +84,7 @@ public class PersistentManagerScript : MonoBehaviour
         {
             Destroy(gameObject); //if instance already contains data -> destroy duplicant (dont create again)
         }
-
+        /*
         if (Instance != null && GameReset == true)
         {
             Destroy(gameObject);
@@ -91,7 +94,7 @@ public class PersistentManagerScript : MonoBehaviour
         {
             GameReset = false;
         }
-
+        */
 
     }
 
@@ -104,7 +107,7 @@ public class PersistentManagerScript : MonoBehaviour
         if (PlayerHealth+1 > PlayerMaxHealth)
         {
             PlayerHealth = Con * 10;
-
+                
 
         }
 
@@ -115,6 +118,40 @@ public class PersistentManagerScript : MonoBehaviour
         {
             CriticalHitChance();
             
+        }
+
+        if (GameReset == true)
+        {
+            GameReset = false;
+            FightScreen = false;
+            FightMusicStart = false;
+            PlayerCanMove = true;
+            EnDies = 0;
+            XPScreen = 0;
+            ///*
+            Lvl = 1;
+            PlayerMana = 100;
+            maxMana = 100;
+            XPpoints = 0;
+            SkillPoints = 0;
+            //*/
+            GameStart = true;
+            EnLVL = 0;
+            ParticleActive = false;
+            StunActive = false;
+            PoisonActive = false;
+            ConfusionActive = false;
+            WeakenActive = false;
+            SlowActive = false;
+            BurnActive = false;
+            BasicAnimTackle = false;
+            BasicAnimJumphit = false;
+            BasicAnimAttack = false;
+            BasicDefense = false;
+            BasicAttack = false;
+            SuperAttack = false;
+            UltraAttack = false;
+
         }
 
     }

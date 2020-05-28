@@ -12,13 +12,13 @@ public class MainMenuClassSelect : MonoBehaviour
     {
         ContinueButton.SetActive(false);
         
-
+        /*
         //if (PersistentManagerScript.Instance.PlayerHealth <= 1)
         if (GameObject.Find("PersistentManager") != null)
         {
             ContinueButton.SetActive(true);
         }
-        
+        */
 
     }
 
