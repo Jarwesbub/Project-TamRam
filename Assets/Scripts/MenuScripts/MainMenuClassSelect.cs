@@ -7,6 +7,8 @@ public class MainMenuClassSelect : MonoBehaviour
 {
     public GameObject ContinueButton;
     public AudioSource MenuButtons;
+    public GameObject CreditsObj;
+    bool CreditCheck = false;
 
     void Start()
     {
@@ -19,6 +21,29 @@ public class MainMenuClassSelect : MonoBehaviour
             ContinueButton.SetActive(true);
         }
         */
+
+    }
+
+    public void EndGame()
+    {
+        MenuButtons.Play();
+        Application.Quit();
+    }
+
+    public void Credits()
+    {
+        if (CreditCheck == false)
+        {
+            MenuButtons.Play();
+            CreditsObj.SetActive(true);
+            CreditCheck = true;
+        }
+        else
+        {
+            MenuButtons.Play();
+            CreditsObj.SetActive(false);
+            CreditCheck = false;
+        }
 
     }
 
