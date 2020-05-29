@@ -12,6 +12,7 @@ public class PlayerMovement2 : MonoBehaviour
     public Rigidbody2D rb;
     private Vector2 movement;
 
+    bool MoveCheck = true;
 
     // Update is called once per frame
     void Update()
@@ -36,18 +37,31 @@ public class PlayerMovement2 : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (PersistentManagerScript.Instance.PlayerCanMove == true)
+        if (PersistentManagerScript.Instance.PlayerCanMove == true && MoveCheck == true)
         {
             movement = new Vector2(moveHorizontal, moveVertical);
             rb.velocity = movement * moveSpeed;
         }
-        else
+        if (PersistentManagerScript.Instance.PlayerCanMove == false)
         {
+            MoveCheck = false;
             rb.velocity = movement * moveSpeed * 0f;
 
         }
+        if (PersistentManagerScript.Instance.PlayerCanMove == true && MoveCheck == false)
+        {
+            StartCoroutine(WaitMove());
+
+        }
+
     }
 
+    IEnumerator WaitMove()
+    {
+        yield return new WaitForSeconds(0.1f);
+        MoveCheck = true;
+
+    }
 
 }
 

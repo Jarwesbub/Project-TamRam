@@ -82,7 +82,7 @@ public class MusicController : MonoBehaviour
             }
             if (PersistentManagerScript.Instance.WorldMapPos == 1)
             {
-                //MusicMap1.Play();
+                MusicMap1.Play();
 
             }
 

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class SFXScript : MonoBehaviour
 {
-    public AudioSource FightTransition;
+    public AudioSource XPScreen;
+    public AudioSource LVLUP;
+    /*
     public AudioSource BasicAttack;
     public AudioSource BurnActive;
     public AudioSource SuperAttack;
     public AudioSource UltraAttack;
-    public AudioSource XPScreen;
     public AudioSource Die1;
-    /*
+    
     public AudioSource C1Ultra; // Class 1 Ultra
     public AudioSource C2Super; // Class 2 Super
     public AudioSource C2Ultra; // Class 2 Ultra
@@ -19,52 +20,51 @@ public class SFXScript : MonoBehaviour
     public AudioSource C3Super; // Class 3 Super
     public AudioSource C3Ultra; // Class 3 Ultra
     */
-
-    bool EnemyDies = false;
+    public bool XPCheck = false;
+    //bool EnemyDies = false;
 
     // Start is called before the first frame update
     void Start()
     {
         
     }
-    IEnumerator EnemyAttack()
+
+    IEnumerator XPSound()
     {
-        if (PersistentManagerScript.Instance.StunActive == false)
+        XPCheck = true;
+        yield return new WaitForSeconds(0.6f);
+        if (PersistentManagerScript.Instance.LvlGet == true)
         {
-            yield return new WaitForSeconds(0.2f);
-            if (PersistentManagerScript.Instance.EnLvl <= 5)
-            {
-                BasicAttack.Play();
-            }
-
-            if (PersistentManagerScript.Instance.EnLvl >= 5 && PersistentManagerScript.Instance.EnLvl <= 10)
-            {
-                SuperAttack.Play();
-            }
-
-            if (PersistentManagerScript.Instance.EnLvl >= 10)
-            {
-                UltraAttack.Play();
-            }
-
+            LVLUP.Play();
         }
-    }
-
+        else
+        {
+            XPScreen.Play();
+        }
+        }
 
     // Update is called once per frame
     void Update()
     {
-        if (PersistentManagerScript.Instance.FightTransition == true)
+        if (PersistentManagerScript.Instance.PlayerCanMove == true)
         {
-            FightTransition.Play();
-            EnemyDies = false;
+            XPCheck = false;
         }
 
+        if (PersistentManagerScript.Instance.XPScreen == 1 && XPCheck == false)
+        {
+            StartCoroutine(XPSound());
+        }
+
+
+
+
+        /*
         if (PersistentManagerScript.Instance.EnemyTurn == true)
         {
             //StartCoroutine(EnemyAttack());
         }
-
+        */
         /*
         if (PersistentManagerScript.Instance.XPScreen == 1)
         {
@@ -144,5 +144,35 @@ public class SFXScript : MonoBehaviour
     */
 
 
+
+
     }
+
+
+    /*
+IEnumerator EnemyAttack()
+{
+    if (PersistentManagerScript.Instance.StunActive == false)
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (PersistentManagerScript.Instance.EnLvl <= 5)
+        {
+            BasicAttack.Play();
+        }
+
+        if (PersistentManagerScript.Instance.EnLvl >= 5 && PersistentManagerScript.Instance.EnLvl <= 10)
+        {
+            SuperAttack.Play();
+        }
+
+        if (PersistentManagerScript.Instance.EnLvl >= 10)
+        {
+            UltraAttack.Play();
+        }
+
+    }
+}
+*/
+
+
 }
