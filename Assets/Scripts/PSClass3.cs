@@ -25,14 +25,24 @@ public class PSClass3 : MonoBehaviour
     {
         if (PersistentManagerScript.Instance.Lvl == 1)
         {
-            PersistentManagerScript.Instance.Str = 22; // 10
-            //PersistentManagerScript.Instance.Con = 12;
-            PersistentManagerScript.Instance.Con = 22; // 9
-            PersistentManagerScript.Instance.Dex = 22; // 8
-            PersistentManagerScript.Instance.Agi = 22; // 9
-            PersistentManagerScript.Instance.Int = 22; // 13
-            PersistentManagerScript.Instance.Luck = 22; // 10
-            PersistentManagerScript.Instance.Wis = 22; // 12
+            /*
+            PersistentManagerScript.Instance.Str = 10; // 10
+            PersistentManagerScript.Instance.Con = 9; // 9
+            PersistentManagerScript.Instance.Dex = 8; // 8
+            PersistentManagerScript.Instance.Agi = 9; // 9
+            PersistentManagerScript.Instance.Int = 13; // 13
+            PersistentManagerScript.Instance.Luck = 10; // 10
+            PersistentManagerScript.Instance.Wis = 12; // 12
+            */
+                      
+            PersistentManagerScript.Instance.Str = 22;
+            PersistentManagerScript.Instance.Con = 22;
+            PersistentManagerScript.Instance.Dex = 22;
+            PersistentManagerScript.Instance.Agi = 22;
+            PersistentManagerScript.Instance.Int = 22;
+            PersistentManagerScript.Instance.Luck = 22;
+            PersistentManagerScript.Instance.Wis = 22;
+            
 
         }
 
