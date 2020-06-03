@@ -97,7 +97,7 @@ public class EnemySpawner : MonoBehaviour
     void Update()
     {
             if (PersistentManagerScript.Instance.MapChange == true)
-        {
+            {
 
                 for (int i = 0; i < Map2parentObject.transform.childCount; i++)
                 {
@@ -120,16 +120,16 @@ public class EnemySpawner : MonoBehaviour
                 }
 
 
-            StartCounting = true;
-            SpawnNumb = 0;
-            PersistentManagerScript.Instance.MapChange = false;
-        }
-        if (PersistentManagerScript.Instance.MapChange == false && StartCounting == true)
-        {
-            StartCounting = false;
-            StartCoroutine(SpawnChanger());
+                StartCounting = true;
+                SpawnNumb = 0;
+                PersistentManagerScript.Instance.MapChange = false;
+            }
+            if (PersistentManagerScript.Instance.MapChange == false && StartCounting == true)
+            {
+                StartCounting = false;
+                StartCoroutine(SpawnChanger());
 
-        }
+            }
         
 
         /*

@@ -396,7 +396,7 @@ public class EnemyLevelManager : MonoBehaviour
             EnDex = 18;
             EnInt = 14;
             EnAgi = 17;
-            EnCon = 12; // 14
+            EnCon = 13; // 14
             EnWis = 12;
         }
 
@@ -406,7 +406,7 @@ public class EnemyLevelManager : MonoBehaviour
             EnDex = 19;
             EnInt = 15;
             EnAgi = 18;
-            EnCon = 12; // 15
+            EnCon = 13; // 15
             EnWis = 13;
         }
 
@@ -416,7 +416,7 @@ public class EnemyLevelManager : MonoBehaviour
             EnDex = 20;
             EnInt = 16;
             EnAgi = 19;
-            EnCon = 13; // 16
+            EnCon = 14; // 16
             EnWis = 14;
         }
         ////////////////////////////
@@ -426,7 +426,7 @@ public class EnemyLevelManager : MonoBehaviour
             EnDex = 21;
             EnInt = 17;
             EnAgi = 20;
-            EnCon = 13; // 17
+            EnCon = 14; // 17
             EnWis = 15;
         }
         DrawEnStarts();

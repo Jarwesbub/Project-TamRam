@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 670723842}
   m_Layer: 0
   m_Name: EnemyClass3
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c042808e36a3d4988addfc892fabfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnClass: 3
   EnLVL: 1
   EnHealth: 30
   EnStr: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   PlayerHealth: 0
   DmgDoneTxt: {fileID: 0}
   DmgTakenTxt: {fileID: 0}
+  DoubleDmg: 0
   myParentObject: {fileID: 0}
   EnHealthTxt: {fileID: 0}
   EnStrTxt: {fileID: 0}
@@ -162,6 +164,12 @@ MonoBehaviour:
   EnLVLTxt: {fileID: 0}
   SpawnPosX: 3
   SpawnPosY: 0
+  StunEffect: 0
+  PoisonEffect: 0
+  ConfusionEffect: 0
+  WeakenEffect: 0
+  SlowEffect: 0
+  BurnEffect: 0
 --- !u!95 &670723842
 Animator:
   serializedVersion: 3

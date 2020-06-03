@@ -14,6 +14,12 @@ public class PlayerMovement2 : MonoBehaviour
 
     bool MoveCheck = true;
 
+    void OnEnable()
+    {
+        StartCoroutine(WaitMove());
+    }
+
+
     // Update is called once per frame
     void Update()
     {
@@ -33,6 +39,13 @@ public class PlayerMovement2 : MonoBehaviour
         }
         transform.localScale = characterScale;
 
+        if (PersistentManagerScript.Instance.PlayerCanMove == true && MoveCheck == false)
+        {
+            gameObject.tag = "PlayerWait";
+            StartCoroutine(WaitMove());
+
+        }
+
     }
 
     void FixedUpdate()
@@ -44,24 +57,33 @@ public class PlayerMovement2 : MonoBehaviour
         }
         if (PersistentManagerScript.Instance.PlayerCanMove == false)
         {
+            gameObject.tag = "PlayerWait";
             MoveCheck = false;
             rb.velocity = movement * moveSpeed * 0f;
 
         }
+        /*
         if (PersistentManagerScript.Instance.PlayerCanMove == true && MoveCheck == false)
         {
+            gameObject.tag = "PlayerWait";
             StartCoroutine(WaitMove());
 
         }
-
+        */
     }
 
     IEnumerator WaitMove()
     {
-        yield return new WaitForSeconds(0.1f);
+        float Time = 2f;
+        //yield return new WaitForSeconds(0.1f); // 0.1
         MoveCheck = true;
+        yield return new WaitForSeconds(Time);
 
+        gameObject.tag = "Player";
     }
+
+
+
 
 }
 

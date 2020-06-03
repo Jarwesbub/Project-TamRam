@@ -186,21 +186,25 @@ public class EnemyClass1AttDef : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        PersistentManagerScript.Instance.FightMusicStart = true;
+        if (other.tag == "Player")
+        {
+            PersistentManagerScript.Instance.FightMusicStart = true;
 
-        RestoreStatusEffect();
-        GetComponent<SpriteRenderer>().enabled = true; //Makes object visible
-        GetComponent<Animator>().enabled = true;
+            RestoreStatusEffect();
+            GetComponent<SpriteRenderer>().enabled = true; //Makes object visible
+            GetComponent<Animator>().enabled = true;
 
-        GetPlayerStats();
-        //PersistentManagerScript.Instance.XPScreen = 0;
-        transform.SetParent(myParentObject.transform);
-        transform.position = new Vector2(SpawnPosX, SpawnPosY);
-        //PersistentManagerScript.Instance.FightScreen = true;
-        PersistentManagerScript.Instance.FightTransition = true; // START SCREENCHANGE SCRIPT
-        DrawEnStatsOnce();
-        StartCoroutine(FightStart());
+            GetPlayerStats();
+            //PersistentManagerScript.Instance.XPScreen = 0;
+            transform.SetParent(myParentObject.transform);
+            transform.position = new Vector2(SpawnPosX, SpawnPosY);
+            //PersistentManagerScript.Instance.FightScreen = true;
+            PersistentManagerScript.Instance.FightTransition = true; // START SCREENCHANGE SCRIPT
+            DrawEnStatsOnce();
+            StartCoroutine(FightStart());
+        }
     }
+
 
     void DrawEnStatsOnce()
     {

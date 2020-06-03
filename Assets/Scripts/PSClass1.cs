@@ -25,7 +25,7 @@ public class PSClass1 : MonoBehaviour
     {
         if (PersistentManagerScript.Instance.Lvl == 1)
         {
-            /*
+            
             PersistentManagerScript.Instance.Str = 13; // 13
             PersistentManagerScript.Instance.Con = 12; // 12
             PersistentManagerScript.Instance.Dex = 9; // 9
@@ -33,8 +33,8 @@ public class PSClass1 : MonoBehaviour
             PersistentManagerScript.Instance.Int = 8; // 8
             PersistentManagerScript.Instance.Luck = 10; // 10
             PersistentManagerScript.Instance.Wis = 10; // 10
-            */
-              
+            
+               /*
             PersistentManagerScript.Instance.Str = 22;
             PersistentManagerScript.Instance.Con = 22;
             PersistentManagerScript.Instance.Dex = 22;
@@ -42,7 +42,7 @@ public class PSClass1 : MonoBehaviour
             PersistentManagerScript.Instance.Int = 22;
             PersistentManagerScript.Instance.Luck = 22;
             PersistentManagerScript.Instance.Wis = 22;
-            
+               */
 
         }
 
