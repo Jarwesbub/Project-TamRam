@@ -227,6 +227,7 @@ public class XPControl : MonoBehaviour
         {
             LevelUPControl.SetActive(false);
 
+            PersistentManagerScript.Instance.MapChange = true; // NEW, Helps counting time in Spawner script
 
             if (EnemyDies == false)
             {

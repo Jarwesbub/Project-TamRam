@@ -24,6 +24,7 @@ public class FightControl : MonoBehaviour
     public GameObject EnemyStats;
     public GameObject RunButton;
 
+
     public void Update()
     {
 

@@ -45,7 +45,7 @@ public class FightCameraControl : MonoBehaviour
             currentView = views[0];
         }
         */
-
+        /*
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             currentView = views [1];
@@ -55,7 +55,7 @@ public class FightCameraControl : MonoBehaviour
         {
             currentView = views [2];
         }
-
+        */
 
     }
 

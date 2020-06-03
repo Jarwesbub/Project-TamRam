@@ -27,13 +27,20 @@ public class PlayerFightEnd : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
 
-        
+        PersistentManagerScript.Instance.StunActive = false;
+        PersistentManagerScript.Instance.PoisonActive = false;
+        PersistentManagerScript.Instance.ConfusionActive = false;
+        PersistentManagerScript.Instance.WeakenActive = false;
+        PersistentManagerScript.Instance.SlowActive = false;
+        PersistentManagerScript.Instance.WeakenActive = false;
+        PersistentManagerScript.Instance.BurnActive = false;
+
         PersistentManagerScript.Instance.EnDies = 2;
         PersistentManagerScript.Instance.XPScreen = 0;
         PersistentManagerScript.Instance.PlayerTurn = false;
         PersistentManagerScript.Instance.EnemyTurn = false;
         PersistentManagerScript.Instance.FightScreen = false;
-
+        PersistentManagerScript.Instance.MapChange = true; // Spawner stops counting time otherwise
 
     }
 

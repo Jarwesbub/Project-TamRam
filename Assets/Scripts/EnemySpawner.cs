@@ -72,6 +72,8 @@ public class EnemySpawner : MonoBehaviour
 
     //public bool Check = false;
 
+    //public int MaxEnemyCount = 100; // original = 50
+    public bool StartCounting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -81,12 +83,20 @@ public class EnemySpawner : MonoBehaviour
         NewSpawnNumb = 100;
     }
 
+    IEnumerator SpawnChanger()
+    {
+        float Time = 10f;
+        yield return new WaitForSeconds(Time);
+
+        PersistentManagerScript.Instance.MapChange = true;
+    }
+
+
+
     // Update is called once per frame
     void Update()
     {
-
-
-        if (PersistentManagerScript.Instance.MapChange == true)
+            if (PersistentManagerScript.Instance.MapChange == true)
         {
 
                 for (int i = 0; i < Map2parentObject.transform.childCount; i++)
@@ -110,14 +120,19 @@ public class EnemySpawner : MonoBehaviour
                 }
 
 
-
+            StartCounting = true;
             SpawnNumb = 0;
             PersistentManagerScript.Instance.MapChange = false;
         }
+        if (PersistentManagerScript.Instance.MapChange == false && StartCounting == true)
+        {
+            StartCounting = false;
+            StartCoroutine(SpawnChanger());
 
+        }
         
 
-
+        /*
         // CHEAT BUTTON
         if (Input.GetKeyDown("r"))
         {
@@ -134,7 +149,7 @@ public class EnemySpawner : MonoBehaviour
             PersistentManagerScript.Instance.MapChange = true;
 
         }
-
+        */
         ///////////////////////////////////////////////////////////////////////////////////////////////////////
         if (PersistentManagerScript.Instance.WorldMapPos == 2)
         {
@@ -155,6 +170,7 @@ public class EnemySpawner : MonoBehaviour
                     SpawnNumb += 1;
                 }
             }
+            
         }
         if (PersistentManagerScript.Instance.WorldMapPos == 3)
         {
@@ -176,6 +192,7 @@ public class EnemySpawner : MonoBehaviour
                 }
 
             }
+
         }
 
         if (PersistentManagerScript.Instance.WorldMapPos == 4)
